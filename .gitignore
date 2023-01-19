@@ -35,5 +35,5 @@ override.tf.json
 .terraformrc
 terraform.rc
 caja-los-andes-bots-07bbe6221616.json
-
+node_modules
 .DS_Store

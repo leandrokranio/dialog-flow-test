@@ -1,5 +1,5 @@
 resource "google_storage_bucket" "function_bucket" {
-    name     = "${var.project_id}-function"
+    name     = "${var.project_id}-function-leandro2"
     location = var.region
 }
 
@@ -29,7 +29,7 @@ resource "google_storage_bucket_object" "zip" {
 
 # Create the Cloud function triggered by a `http` event
 resource "google_cloudfunctions_function" "function" {
-    name                  = "${var.project_id}-function"
+    name                  = "${var.project_id}-function-leandro2"
     runtime               = "nodejs16"  # of course changeable
 
     # Get the source code of the cloud function as a Zip compression
