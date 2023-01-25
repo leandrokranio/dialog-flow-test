@@ -152,7 +152,28 @@ resource "google_dialogflow_cx_page" "order_change" {
     #   }
     # }
     
-    webhook = google_dialogflow_cx_webhook.basic_webhook.id
+    /* webhook = google_dialogflow_cx_webhook.basic_webhook.id */
     tag = "order.change"
+  }
+}
+
+
+  resource "google_dialogflow_cx_page" "get_advice" {
+  parent       = google_dialogflow_cx_agent.agent.start_flow
+  display_name = "Get Advice"
+
+  entry_fulfillment {
+    return_partial_responses = false
+
+    # messages {
+    #  text {
+    #   text = [
+    #      "Un momiento porfa",
+    #    ]
+    #  }
+    #}
+    
+    webhook = google_dialogflow_cx_webhook.basic_webhook.id
+    tag = "get.advice"
   }
 }

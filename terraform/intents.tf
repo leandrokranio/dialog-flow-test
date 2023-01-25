@@ -252,3 +252,24 @@ resource "google_dialogflow_cx_intent" "order_change" {
   }
 
 }
+resource "google_dialogflow_cx_intent" "get_advice" {
+  parent       = google_dialogflow_cx_agent.agent.id
+  display_name = "get.advice"
+  priority     = 500000
+  description  = "Obtener consejo"
+
+  training_phrases {
+    repeat_count = 1
+    parts {
+      text = "¿Me puedes dar algún consejo?"
+    }
+  }
+
+  training_phrases {
+    repeat_count = 1
+    parts {
+      text = "Dime una frase bonita"
+    }
+  }
+
+}
